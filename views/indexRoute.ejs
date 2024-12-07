@@ -63,8 +63,30 @@
       <ul>
         <li><a href="/indexRoute">Home</a></li>
         <li><a href="/posts">About</a></li>
-        <li><a href="/users">Players</a></li>
+        <li><a href="/users">Users</a></li>
       </ul>
     </nav>
+    <br />
+    <main>
+      <h1>Welcome to King's Gambit!</h1>
+      <p>
+        Here, chess players can test out their skills against each other and
+        participate in tournaments!
+      </p>
+      <p>Fill out the form below to create a new user!</p>
+      <br />
+      <form id="userForm" method="POST" action="/users">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required />
+
+        <label for="ranking">Ranking:</label>
+        <input type="number" id="ranking" name="ranking" />
+
+        <button type="submit">Add User</button>
+      </form>
+    </main>
   </body>
 </html>

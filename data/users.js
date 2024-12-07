@@ -1,18 +1,18 @@
 const users = [
   {
-    id: 1,
-    name: "John Doe",
-    email: "john.doe@gmail.com",
+    name: "John Smith",
+    age: 28,
+    ranking: 12,
   },
   {
-    id: 2,
-    name: "Jane Smith",
-    email: "jane.smith@gmail.com",
+    name: "Jane Doe",
+    age: 24,
+    ranking: 28,
   },
   {
-    id: 3,
-    name: "Mike Johnson",
-    email: "mike.johnson@gmail.com",
+    name: "Mike Jackson",
+    age: 35,
+    ranking: 6,
   },
 ];
 
