@@ -92,12 +92,12 @@
     </nav>
     <main>
       <ul>
-        <% users.forEach(user => { %>
+        <% foundUser.forEach(foundUser => { %>
         <li>
           <br />
-          <span>Name:</span><%= user.name %> <br /><span>Age:</span>(<%=
-          user.age %>)<br />
-          <span>Ranking:</span>(<%= user.ranking %>)
+          <span>Name:</span><%= foundUser.name %> <br /><span>Age:</span>(<%=
+          foundUser.age %>)<br />
+          <span>Ranking:</span>(<%= foundUser.ranking %>)
         </li>
         <% }) %>
       </ul>

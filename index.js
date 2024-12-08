@@ -1,17 +1,18 @@
 const express = require("express");
+const db = require("./db/conn");
 const methodOverride = require("method-override");
 const app = express();
 const port = 3000;
-
-const indexRoute = require("./routes/indexRoute.js");
-const postRoute = require("./routes/postRoute.js");
-const userRoute = require("./routes/userRoute.js");
 
 // View Engine
 app.set("views", "views");
 app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+const indexRoute = require("./routes/indexRoute.js");
+const postRoute = require("./routes/postRoute.js");
+const userRoute = require("./routes/userRoute.js");
 
 // Middleware
 app.use((req, res, next) => {
