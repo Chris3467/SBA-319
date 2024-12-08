@@ -26,10 +26,34 @@ router.post("/", async (req, res) => {
 
 // DELETE
 router.delete("/:id", async (req, res) => {
-  await User.findByIdAndDelete(req.params.id);
-  res.status(200).redirect("/users");
+  try {
+    const { id } = req.params;
+    const deleteUser = await User.findByIdAndDelete(id);
+    if (!deleteUser) {
+      return res.status(404).send("User not found");
+    }
+    res.status(200).redirect("/users");
+  } catch (err) {
+    console.error(err, "Failed deleting user");
+    res.status(500).send("Server error");
+  }
 });
 
 // UPDATE
+router.patch("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updatedUser = await User.findByIdAndUpdate(id, req.body, {
+      new: true,
+    });
+    if (!updatedUser) {
+      return res.status(404).send("User not found");
+    }
+    res.status(200).redirect("/users");
+  } catch (err) {
+    console.error(err, "Failed updating user");
+    res.status(500).send("Server error");
+  }
+});
 
 module.exports = router;
