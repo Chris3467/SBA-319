@@ -14,6 +14,7 @@ const indexRoute = require("./routes/indexRoute.js");
 const postRoute = require("./routes/postRoute.js");
 const userRoute = require("./routes/userRoute.js");
 const statsRoute = require("./routes/statRoute.js");
+const feedBackRouter = require("./routes/feedBackRouter.js");
 
 // Middleware
 app.use((req, res, next) => {
@@ -36,6 +37,7 @@ app.use("/indexRoute", indexRoute);
 app.use("/users", userRoute);
 app.use("/posts", postRoute);
 app.use("/stats", statsRoute);
+app.use("/feedback", feedBackRouter);
 
 app.listen(port, () => {
   console.log("I can hear you");

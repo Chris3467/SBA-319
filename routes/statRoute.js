@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Seed Route
+// Seed Route this works
 /* router.get("/seed", async (req, res) => {
   try {
     await Stats.create([
@@ -29,18 +29,4 @@ router.get("/", async (req, res) => {
   }
 }); */
 
-// POST
-/* router.post("/", async (req, res) => {
-  try {
-    const { elo, wins } = req.body;
-    await Stats.create({
-      elo,
-      wins,
-    });
-    res.send("success").status(200);
-  } catch (err) {
-    res.status(400).send(err);
-  }
-});
- */
 module.exports = router;
