@@ -13,6 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 const indexRoute = require("./routes/indexRoute.js");
 const postRoute = require("./routes/postRoute.js");
 const userRoute = require("./routes/userRoute.js");
+const statsRoute = require("./routes/statRoute.js");
 
 // Middleware
 app.use((req, res, next) => {
@@ -34,6 +35,7 @@ app.use(methodOverride("_method"));
 app.use("/indexRoute", indexRoute);
 app.use("/users", userRoute);
 app.use("/posts", postRoute);
+app.use("/stats", statsRoute);
 
 app.listen(port, () => {
   console.log("I can hear you");
