@@ -11,6 +11,9 @@ const userSchema = new mongoose.Schema(
   }
 );
 
+userSchema.index({ name: 1 });
+userSchema.index({ age: 1 });
+userSchema.index({ name: 1, ranking: -1 });
 const User = mongoose.model("User", userSchema);
 console.log(User);
 
