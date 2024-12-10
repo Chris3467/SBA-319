@@ -2,11 +2,13 @@ const express = require("express");
 const router = express.Router();
 const Stats = require("../models/stats");
 
+// http://localhost:3000/stats
 // GET
 router.get("/", async (req, res) => {
   try {
     const foundStats = await Stats.find(req.params);
     console.log(foundStats);
+    res.status(200).json(foundStats);
   } catch (err) {
     console.error(err);
     res.status(500).send({ error: "Failed to fetch stats" });

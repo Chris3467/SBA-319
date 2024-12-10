@@ -2,11 +2,13 @@ const express = require("express");
 const router = express.Router();
 const FeedBack = require("../models/feedBack");
 
+//localhost:3000/feedback
 // GET
-router.get("/", async (req, res) => {
+http: router.get("/", async (req, res) => {
   try {
     const foundFeedBack = await FeedBack.find(req.params);
     console.log(foundFeedBack);
+    res.status(200).json(foundFeedBack);
   } catch (err) {
     console.error(err);
     res.status(500).send({ error: "Failed to fetch feedback" });
